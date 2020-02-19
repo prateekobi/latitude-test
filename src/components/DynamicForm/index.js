@@ -10,7 +10,31 @@ class DynamicForm extends Component {
     renderForm = () => {
         // Create model prop - values in App.js
         let model = this.props.model;
-        console.log(model);
+        let formUI = model.map((m) => {
+            let key = m.key;
+            let type = m.type || 'text'; // Default to text type if type is not defined in moodel (App.js)
+            let props = m.props || {};  // ex: name attribute - default to empty onj if not defined in App.js
+
+            return (
+                <div key={key} className="form-group">
+                    <label
+                        className="form-label"
+                        key={"1" + m.key}
+                        htmlFor="m.key">
+                        {m.label}
+                    </label>
+                    <input
+                        ref={(key) => { this[m.key] = key }}
+                        {...props}
+                        className="form-control"
+                        type={type}
+                        key={"i" + m.key}
+                        onChange={(e) => { this.onChange(e, key) }}>
+                    </input>
+                </div>
+            );
+            return formUI;
+        });
     }
 
     render() {
