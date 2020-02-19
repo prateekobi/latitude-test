@@ -45,14 +45,14 @@ class App extends Component {
           className="form"
           title="Latitude Dynamic Form"
           model={[
-            { key: 'name', label: 'Name*', props: { required: true, name: 'name' } },
+            { key: 'name', label: 'Name*', props: { required: true, name: 'name', placeholder: 'Enter first and last name' } },
             { key: 'dob', label: 'DOB (dd/mm/yyyy)', type: 'date', props: { name: 'dob' } },
             { key: 'gender', label: 'Gender', type: 'select' },
-            { key: 'mobile', label: 'Mobile' },
-            { key: 'home', label: 'Home' },
+            { key: 'mobile', label: 'Mobile', props: { placeholder: 'Enter mobile #' } },
+            { key: 'home', label: 'Home', props: { placeholder: 'Enter home #' } },
             { key: 'consent', label: 'Consent Required', type: 'checkbox' },
-            { key: 'guardian', label: 'Guardian name' },
-            { key: 'gurdiancontact', label: 'Guardian Contact' }
+            { key: 'guardian', label: 'Guardian name', props: { placeholder: 'Enter Guardian name' } },
+            { key: 'gurdiancontact', label: 'Guardian Contact', props: { placeholder: 'Enter Guardin #' } }
           ]}
           onSubmit={(model) => { this.onSubmit(model) }} />
 
