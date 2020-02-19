@@ -11,6 +11,13 @@ class DynamicForm extends Component {
         return (
             <div>
                 <h3>{title}</h3>
+                <div className="dynamic-form">
+                    <form onSubmit={(e) => { this.onSubmit(e) }}>
+                        <div className="form-group">
+                            <button className="btn btn-primary" type="submit">submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         );
     }
