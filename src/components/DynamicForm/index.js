@@ -17,6 +17,11 @@ class DynamicForm extends Component {
         })
     }
 
+    onSubmit = (e) => {
+        e.preventDefault();
+        if (this.props.onSubmit) this.props.onSubmit(this.state);
+    }
+
     renderForm = () => {
         // Create model prop - values in App.js
         let model = this.props.model;
