@@ -30,7 +30,6 @@ class App extends Component {
   onSubmit = (model) => {
     // Set unique model id
     model.id = +new Date();
-
     // Set data state (store model values in state)
     this.setState({
       data: [model, ...this.state.data]
