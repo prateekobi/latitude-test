@@ -26,6 +26,18 @@ class App extends Component {
       ]
     }
   }
+
+  onSubmit = (model) => {
+    // Set unique model id
+    model.id = +new Date();
+
+    // Set data state (store model values in state)
+    this.setState({
+      data: [model, ...this.state.data]
+    })
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -41,7 +53,8 @@ class App extends Component {
             { key: 'consent', label: 'Consent Required', type: 'checkbox' },
             { key: 'guardian', label: 'Guardian name' },
             { key: 'gurdiancontact', label: 'Guardian Contact' }
-          ]} />
+          ]}
+          onSubmit={(model) => { this.onSubmit(model) }} />
         <div id="json"
           style={{ width: "300" }}>
           {JSON.stringify(this.state.data[0])}

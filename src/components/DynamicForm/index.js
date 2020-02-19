@@ -14,6 +14,7 @@ class DynamicForm extends Component {
     }
 
     render() {
+        // Create title prop - value passed in App.js else default to 'Dynamic Form'
         let title = this.props.title || 'Dynamic Form';
         return (
             <div>
