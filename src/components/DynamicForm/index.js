@@ -33,8 +33,8 @@ class DynamicForm extends Component {
                     </input>
                 </div>
             );
-            return formUI;
         });
+        return formUI;
     }
 
     render() {
