@@ -7,8 +7,11 @@ class DynamicForm extends Component {
         this.state = {}
     }
     render() {
+        let title = this.props.title || 'Dynamic Form';
         return (
-            <div>Dynamic Form Component</div>
+            <div>
+                <h3>{title}</h3>
+            </div>
         );
     }
 }

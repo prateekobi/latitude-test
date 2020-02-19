@@ -28,9 +28,13 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        App Component
-        <DynamicForm />
+      <div className="App">
+        <DynamicForm
+          title="Latitude Dynamic Form" />
+        <div id="json"
+          style={{ width: "300" }}>
+          {JSON.stringify(this.state.data[0])}
+        </div>
       </div>
     );
   }
