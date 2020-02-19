@@ -30,6 +30,28 @@ class DynamicForm extends Component {
             let type = m.type || 'text'; // Default to text type if type is not defined in moodel (App.js)
             let props = m.props || {};  // ex: name attribute - default to empty onj if not defined in App.js
 
+            if (m.type === 'select') {
+                return (
+                    <div key={key} className="form-group">
+                        <label
+                            className="form-label"
+                            key={"1" + m.key}
+                            htmlFor="m.key">
+                            {m.label}
+                        </label>
+                        <select
+                            className="form-control"
+                            key={"i" + m.key}
+                            {...props}
+                            ref={(key) => { this[m.key] = key }}
+                            onChange={(e) => { this.onChange(e, key) }}>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                );
+            }
+
             return (
                 <div key={key} className="form-group">
                     <label
