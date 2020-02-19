@@ -25,7 +25,9 @@ class App extends Component {
     }
   }
   render() {
-    return (  );
+    return (
+      <div>App Component</div>
+    );
   }
 }
 
