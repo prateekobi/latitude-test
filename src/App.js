@@ -55,6 +55,7 @@ class App extends Component {
             { key: 'gurdiancontact', label: 'Guardian Contact' }
           ]}
           onSubmit={(model) => { this.onSubmit(model) }} />
+
         <div id="json"
           style={{ width: "300" }}>
           {JSON.stringify(this.state.data[0])}

@@ -7,6 +7,16 @@ class DynamicForm extends Component {
         this.state = {}
     }
 
+    onChange = (e, key) => {
+        const target = e.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        console.log(value);
+
+        this.setState({
+            [key]: this[key].value,
+        })
+    }
+
     renderForm = () => {
         // Create model prop - values in App.js
         let model = this.props.model;
