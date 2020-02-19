@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import DynamicForm from "./components/DynamicForm/index";
+
 import './App.css';
 
 class App extends Component {
@@ -26,7 +28,10 @@ class App extends Component {
   }
   render() {
     return (
-      <div>App Component</div>
+      <div>
+        App Component
+        <DynamicForm />
+      </div>
     );
   }
 }
