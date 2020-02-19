@@ -7,6 +7,14 @@ class DynamicForm extends Component {
         this.state = {}
     }
 
+    // Calculate age by input given yyyy-mm-dd (used for validation)
+    getAge = (e) => {
+        const dob = e.target.dob.value;
+        let birthday = +new Date(dob);
+
+        return ~~((Date.now() - birthday) / (31557600000));
+    }
+
     onChange = (e, key) => {
         const target = e.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -19,6 +27,11 @@ class DynamicForm extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
+        // Validation for age - check whether user > 18
+        if (this.getAge(e) < 18) {
+            alert('Must be older than 18!');
+            return;
+        }
         if (this.props.onSubmit) this.props.onSubmit(this.state);
     }
 
