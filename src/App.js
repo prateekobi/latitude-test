@@ -30,7 +30,18 @@ class App extends Component {
     return (
       <div className="App">
         <DynamicForm
-          title="Latitude Dynamic Form" />
+          className="form"
+          title="Latitude Dynamic Form"
+          model={[
+            { key: 'name', label: 'Name*', props: { required: true, name: 'name' } },
+            { key: 'dob', label: 'DOB (dd/mm/yyyy)', type: 'date', props: { name: 'dob' } },
+            { key: 'gender', label: 'Gender', type: 'select' },
+            { key: 'mobile', label: 'Mobile' },
+            { key: 'home', label: 'Home' },
+            { key: 'consent', label: 'Consent Required', type: 'checkbox' },
+            { key: 'guardian', label: 'Guardian name' },
+            { key: 'gurdiancontact', label: 'Guardian Contact' }
+          ]} />
         <div id="json"
           style={{ width: "300" }}>
           {JSON.stringify(this.state.data[0])}
