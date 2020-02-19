@@ -27,6 +27,13 @@ class DynamicForm extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
+        const name = e.target.name.value;
+        // Validation for name - must include first and last name seperated by space (checking for space)
+        if (name.indexOf(' ') === -1) {
+            alert('Name must contain first and last name!');
+            return;
+        }
+
         // Validation for age - check whether user > 18
         if (this.getAge(e) < 18) {
             alert('Must be older than 18!');
