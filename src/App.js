@@ -46,7 +46,7 @@ class App extends Component {
           title="Latitude Dynamic Form"
           model={[
             { key: 'name', label: 'Name*', props: { required: true, name: 'name', placeholder: 'Enter first and last name' } },
-            { key: 'dob', label: 'DOB (dd/mm/yyyy)', type: 'date', props: { name: 'dob' } },
+            { key: 'dob', label: 'DOB (dd/mm/yyyy)*', type: 'date', props: { name: 'dob' } },
             { key: 'gender', label: 'Gender', type: 'select' },
             { key: 'mobile', label: 'Mobile', props: { placeholder: 'Enter mobile #' } },
             { key: 'home', label: 'Home', props: { placeholder: 'Enter home #' } },
